@@ -7,9 +7,6 @@
   <xacro:arg name="fake_sensor_commands" default="false" />
   <xacro:arg name="port_name" default="/dev/ttyUSB0" />
 
-  <!-- Import Rviz colors -->
-  <xacro:include filename="$(find open_manipulator_x_description)/gazebo/materials.xacro" />
-
   <!-- Import all Gazebo-customization elements, including Gazebo colors -->
   <xacro:include filename="$(find open_manipulator_x_description)/gazebo/open_manipulator_x.gazebo.xacro" />
 
@@ -27,7 +24,7 @@
     port_name="$(arg port_name)"/>
 
   <gazebo>
-    <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
+    <plugin filename="libign_ros2_control-system.so" name="ign_ros2_control::IgnitionROS2ControlPlugin">
       <parameters>$(find open_manipulator_x_bringup)/config/gazebo_controller_manager.yaml</parameters>
     </plugin>
   </gazebo>

@@ -14,7 +14,9 @@
         <geometry>
           <mesh filename="${meshes_file_direction}/link1.stl" scale="0.001 0.001 0.001"/>
         </geometry>
-        <material name="grey"/>
+        <material name="grey">
+          <color rgba="0.2 0.2 0.2 1"/>
+        </material>
       </visual>
 
       <collision>
@@ -38,7 +40,7 @@
       <child link="${prefix}link2"/>
       <origin xyz="0.012 0.0 0.017" rpy="0 0 0"/>
       <axis xyz="0 0 1"/>
-      <limit velocity="4.8" effort="1" lower="${-pi}" upper="${pi}" />
+      <limit velocity="4.8" effort="1000" lower="${-pi}" upper="${pi}" />
       <dynamics damping="0.1"/>
     </joint>
 
@@ -48,7 +50,9 @@
         <geometry>
           <mesh filename="${meshes_file_direction}/link2.stl" scale="0.001 0.001 0.001"/>
         </geometry>
-        <material name="grey"/>
+        <material name="grey">
+          <color rgba="0.2 0.2 0.2 1"/>
+        </material>
       </visual>
 
       <collision>
@@ -72,7 +76,7 @@
       <child link="${prefix}link3"/>
       <origin xyz="0.0 0.0 0.0595" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
-      <limit velocity="4.8" effort="1" lower="${-1.5}" upper="${1.5}" />
+      <limit velocity="4.8" effort="1000" lower="${-1.5}" upper="${1.5}" />
       <dynamics damping="0.1"/>
     </joint>
 
@@ -82,7 +86,9 @@
         <geometry>
           <mesh filename="${meshes_file_direction}/link3.stl" scale="0.001 0.001 0.001"/>
         </geometry>
-        <material name="grey"/>
+        <material name="grey">
+          <color rgba="0.2 0.2 0.2 1"/>
+        </material>
       </visual>
 
       <collision>
@@ -106,7 +112,7 @@
       <child link="${prefix}link4"/>
       <origin xyz="0.024 0 0.128" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
-      <limit velocity="4.8" effort="1" lower="${-1.5}" upper="${1.4}" />
+      <limit velocity="4.8" effort="1000" lower="${-1.5}" upper="${1.4}" />
       <dynamics damping="0.1"/>
     </joint>
 
@@ -116,7 +122,9 @@
         <geometry>
           <mesh filename="${meshes_file_direction}/link4.stl" scale="0.001 0.001 0.001"/>
         </geometry>
-        <material name="grey"/>
+        <material name="grey">
+          <color rgba="0.2 0.2 0.2 1"/>
+        </material>
       </visual>
 
       <collision>
@@ -140,7 +148,7 @@
       <child link="${prefix}link5"/>
       <origin xyz="0.124 0.0 0.0" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
-      <limit velocity="4.8" effort="1" lower="${-1.7}" upper="${1.97}" />
+      <limit velocity="4.8" effort="1000" lower="${-1.7}" upper="${1.97}" />
       <dynamics damping="0.1"/>
     </joint>
 
@@ -150,7 +158,9 @@
         <geometry>
           <mesh filename="${meshes_file_direction}/link5.stl" scale="0.001 0.001 0.001"/>
         </geometry>
-        <material name="grey"/>
+        <material name="grey">
+          <color rgba="0.2 0.2 0.2 1"/>
+        </material>
       </visual>
 
       <collision>
@@ -174,7 +184,7 @@
       <child link="${prefix}gripper_left_link"/>
       <origin xyz="0.0817 0.021 0.0" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
-      <limit velocity="4.8" effort="1" lower="-0.010" upper="0.019" />
+      <limit velocity="4.8" effort="1000" lower="-0.010" upper="0.019" />
       <dynamics damping="0.1"/>
     </joint>
 
@@ -184,7 +194,9 @@
         <geometry>
           <mesh filename="${meshes_file_direction}/gripper_left_palm.stl" scale="0.001 0.001 0.001"/>
         </geometry>
-        <material name="grey"/>
+        <material name="grey">
+          <color rgba="0.2 0.2 0.2 1"/>
+        </material>
       </visual>
 
       <collision>
@@ -214,9 +226,9 @@
       <child link="${prefix}gripper_right_link"/>
       <origin xyz="0.0817 -0.021 0" rpy="0 0 0"/>
       <axis xyz="0 -1 0"/>
-      <limit velocity="4.8" effort="1" lower="-0.010" upper="0.019" />
+      <limit velocity="4.8" effort="1000" lower="-0.010" upper="0.019" />
+      <dynamics damping="0.7"/>
       <mimic joint="${prefix}gripper_left_joint" multiplier="1"/>
-      <dynamics damping="0.1"/>
     </joint>
 
     <link name="${prefix}gripper_right_link">
@@ -225,7 +237,9 @@
         <geometry>
           <mesh filename="${meshes_file_direction}/gripper_right_palm.stl" scale="0.001 0.001 0.001"/>
         </geometry>
-        <material name="grey"/>
+        <material name="grey">
+          <color rgba="0.2 0.2 0.2 1"/>
+        </material>
       </visual>
 
       <collision>
@@ -256,8 +270,10 @@
         <geometry>
           <box size="0.01 0.01 0.01" />
         </geometry>
-        <material name="red"/>
-       </visual>
+        <material name="red">
+          <color rgba="1.0 0.0 0.0 1"/>
+        </material>
+      </visual>
     </link>
 
   </xacro:macro>
