@@ -53,12 +53,17 @@ def generate_launch_description():
            ]
     )
 
+    gui_config = os.path.join(
+        open_manipulator_x_bringup_path, 'config', 'gazebo_gui.config')
+
     gazebo = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
                     get_package_share_directory('ros_gz_sim'), 'launch'), '/gz_sim.launch.py']),
                 launch_arguments=[
                     ('gz_args', [LaunchConfiguration('world'),
                                  '.sdf',
+                                 ' --gui-config ',
+                                 gui_config,
                                  ' -v 1',
                                  ' -r']
                     )
